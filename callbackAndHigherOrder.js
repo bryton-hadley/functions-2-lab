@@ -105,8 +105,9 @@ contains(names, 'Colt', result => {
 */
 
 // CODE HERE
-const uniq = (names, callBack) => {
-  for (i = 0; i < names.length; i++){
+const uniq = (arr, callBack) => {
+  for( let j = 0; j < arr.length; j++ )
+  for (i = 0; i < arr.length; i++){
     if(arr[i] === arr[j]){
       arr.splice(j, 1)
       j--
@@ -115,7 +116,7 @@ const uniq = (names, callBack) => {
   callBack(arr)
 }
 
-uniq(names, uniqArr => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`))
+
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -125,7 +126,7 @@ uniq(names, uniqArr => console.log(`The new names array with all the duplicate i
 
 // CODE HERE
 
-
+//uniq((names, uniqArr) => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`))
 
 ////////// PROBLEM 6 //////////
 
@@ -135,7 +136,7 @@ uniq(names, uniqArr => console.log(`The new names array with all the duplicate i
 */
 
 // CODE HERE 
-
+const each = (name, callBack) => names.forEach((name, i) => (name, i))
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -146,7 +147,7 @@ uniq(names, uniqArr => console.log(`The new names array with all the duplicate i
 
 // CODE HERE
 
-
+each((names, items, index) => console.log(`The item at index ${items} is ${index}`))
 ////////// PROBLEM 7 //////////
 
 /*
@@ -178,6 +179,7 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
+const getUserById = (users, id, clb) =>  
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
