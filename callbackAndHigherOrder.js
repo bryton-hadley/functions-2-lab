@@ -13,9 +13,9 @@ const multiply = (num1, num2, callback) => callback(num1 * num2)
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// multiply(4, 3, answer => {
-//   console.log('The answer is ' + answer) //should console.log 12
-// })
+multiply(4, 3, answer => {
+  console.log('The answer is ' + answer) //should console.log 12
+})
 
 
 
@@ -106,13 +106,14 @@ contains(names, 'Colt', result => {
 
 // CODE HERE
 const uniq = (arr, callBack) => {
-  for( let j = 0; j < arr.length; j++ )
+  for( let j = 0; j < arr.length; j++ ){
   for (i = 0; i < arr.length; i++){
     if(arr[i] === arr[j]){
       arr.splice(j, 1)
       j--
     }
   }
+}
   callBack(arr)
 }
 
@@ -136,8 +137,15 @@ const uniq = (arr, callBack) => {
 */
 
 // CODE HERE 
-const each = (name, callBack) => names.forEach((name, i) => (name, i))
+const each = (names, callBack) => {names.forEach(callBack)}
 
+let people = ['bryton', 'mike']
+
+const logNames = (name, index) => {
+  console.log(name, index)
+}
+each(people, logNames)
+ 
 /*
   Invoke the each function, passing in the names array and a callback function.
   The callback function should take in two parameters, item and index.
@@ -174,12 +182,21 @@ var users = [
     email: 'ryan@gmail.com',
     name: 'Ryan',
     address: '192 East 32 North'
-  },
+  }
 ]
 // Do not edit the code above.
 
 // CODE HERE 
-const getUserById = (users, id, clb) =>  
+
+const getUserById = (arrUsers, id, cb) => {
+  for(let i = 0; i < arrUsers.length; i++){
+    if(arrUsers[i].id === id){
+      return cb(arrUsers[i])
+    }
+  }
+} 
+
+
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
